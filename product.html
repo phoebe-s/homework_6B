@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- walnut roll product page -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bun Bun Bakery</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+   <div class="headline" id="theHeadline">
+        <h1>BUN BUN BAKERY</h1>
+   </div>
+
+    <!-- location search -->
+    <div class="location">
+            <input type="text" placeholder="Search Locations..">
+            <button type="submit">Search</button>
+        </div>
+
+    <!-- nav bar -->
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Order</a>
+      <a href="#special">Valentine's Day</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+        <div class="topnav-right">
+            <a href="cart.html">My Cart</a>
+        </div>
+    </div>
+    
+    <main class="container">
+        <!-- left column / product image-->
+        <div class="left-column">
+            <img src="images/walnutproduct.png" id="mainImg" alt="walnut roll"/>
+            <ul class="smalls">
+                <li><img src="images/wsmall1.png" alt="view 1 of roll"/></li>
+                <li><img src="images/wsmall2.png" alt="view 2 of roll"/></li>
+                <li><img src="images/wsmall3.png" alt="view 3 of roll"/></li>
+                <li><img src="images/wsmall4.png" alt="view 4 of roll"/></li>
+                <li><img src="images/wsmall5.png" alt="view 5 of roll"/></li>
+            </ul>
+        </div>
+
+        <!-- right column / product description -->
+        <div class="right-column">
+            <div class="product-description">
+                <h2 class="product-name">Walnut Roll</h2>
+                <h3 class="product-price">$5.00</h3>
+                <p>Being an old-fashioned dessert, it’s simplicity itself to put together, just a standard biscuit dough, rolled out into a rectangle, spread with melted butter, sprinkled with sugar and walnuts, rolled up like cinnamon buns, and baked. Simple and delicious.</p>
+            </div>
+
+            <!-- Glazing selection -->
+            <div>
+                <span>Glazing selection*</span>
+                <div class="glazing-selection">
+                    <button id="none">None</button>
+                    <button id="sugar-milk">Sugar-milk</button>
+                    <button id="vanilla-milk">Vanilla-milk</button>
+                    <button id="double-chocolate">Double-chocolate</button>
+                </div>
+            </div>
+           
+            <!-- Amount selection -->
+            <div>
+                <span>Amount of rolls*</span>
+                <div class="amount-selected">
+                    <button id="one">1</button>
+                    <button id="three">3</button>
+                    <button id="six">6</button>
+                    <button id="twelve">12</button>
+                </div>
+            </div>
+
+            <!-- add to cart -->
+            <div class=cart-submit>
+                <button type="submit" id="submit" >Add to Cart</button>
+            </div>
+
+            <!-- notification after adding to cart -->
+            <div id="added-item">
+                <p id="notification" style='display: none'>Item added to cart!</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Recommended products list -->
+    <div class="recommended">
+        <h3>Customers also bought</h3>
+            <div class="row">
+               <div class="col">
+                  <a href="product2.html">
+                    <img src="images/caramelpecan.png" alt="caramel pecan rolls">
+                    <h4>Caramel Pecan</h4>
+                 </a>
+                     <p>$5.00</p>
+               </div>
+               <div class="col">
+                  <img src="images/original.png" alt="original rolls">
+                  <h4>Original</h4>
+                  <p>$5.00</p>
+               </div>
+               <div class="col">
+                  <img src="images/blackberry.png" alt="blackberry rolls">
+                  <h4>Blackberry</h4>
+                  <p>$5.00</p>
+               </div>
+               <div class="col">
+                  <img src="images/pumpkinspice.png" alt="pumpkin spice rolls">
+                  <h4>Pumpkin Spice</h4>
+                  <p>$5.00</p>
+               </div>
+            </div>
+    </div>
+
+    <!-- footer content -->
+    <footer>
+        <div class="newsletter">
+            <div class="button">
+                <div class="content">
+                    <p>Join our newsletter!</p>
+                    <input type="text" placeholder="Enter email address here..">
+                    <button>Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <p>Follow us</p>
+            <ul class="socials">
+                <li><img src="images/twitter.png" alt="twitter icon"/></li>
+                <li><img src="images/instagram.png" alt="instagram icon"/></li>
+                <li><img src="images/facebook.png" alt="facebook icon"/></li>
+                <li><img src="images/youtube.jpg" alt="youtube icon"/></li>
+            </ul>
+            <p>Back to top</p>
+        </div>
+    </footer>
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
