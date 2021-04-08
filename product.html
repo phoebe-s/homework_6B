@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+<body onload="onLoad()">
    <div class="headline" id="theHeadline">
         <h1>BUN BUN BAKERY</h1>
    </div>
@@ -27,20 +27,20 @@
       <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
         <div class="topnav-right">
-            <a href="cart.html">My Cart</a>
+            <a href="cart.html" id="cart-display">My Cart (<span id="cart-count"></span>)</a>
         </div>
     </div>
     
     <main class="container">
         <!-- left column / product image-->
         <div class="left-column">
-            <img src="images/walnutproduct.png" id="mainImg" alt="walnut roll"/>
+            <img src="assets/walnutproduct.png" id="mainImg" alt="walnut roll"/>
             <ul class="smalls">
-                <li><img src="images/wsmall1.png" alt="view 1 of roll"/></li>
-                <li><img src="images/wsmall2.png" alt="view 2 of roll"/></li>
-                <li><img src="images/wsmall3.png" alt="view 3 of roll"/></li>
-                <li><img src="images/wsmall4.png" alt="view 4 of roll"/></li>
-                <li><img src="images/wsmall5.png" alt="view 5 of roll"/></li>
+                <li><img src="assets/wsmall1.png" alt="view 1 of roll"/></li>
+                <li><img src="assets/wsmall2.png" alt="view 2 of roll"/></li>
+                <li><img src="assets/wsmall3.png" alt="view 3 of roll"/></li>
+                <li><img src="assets/wsmall4.png" alt="view 4 of roll"/></li>
+                <li><img src="assets/wsmall5.png" alt="view 5 of roll"/></li>
             </ul>
         </div>
 
@@ -89,27 +89,34 @@
     <!-- Recommended products list -->
     <div class="recommended">
         <h3>Customers also bought</h3>
+            <span>&#139;</span>
+            <span>&#155;</span>
             <div class="row">
                <div class="col">
                   <a href="product2.html">
-                    <img src="images/caramelpecan.png" alt="caramel pecan rolls">
+                    <img src="assets/caramelpecan.png" alt="caramel pecan rolls">
                     <h4>Caramel Pecan</h4>
                  </a>
                      <p>$5.00</p>
                </div>
                <div class="col">
-                  <img src="images/original.png" alt="original rolls">
+                  <img src="assets/original.png" alt="original rolls">
                   <h4>Original</h4>
                   <p>$5.00</p>
                </div>
                <div class="col">
-                  <img src="images/blackberry.png" alt="blackberry rolls">
+                  <img src="assets/blackberry.png" alt="blackberry rolls">
                   <h4>Blackberry</h4>
                   <p>$5.00</p>
                </div>
                <div class="col">
-                  <img src="images/pumpkinspice.png" alt="pumpkin spice rolls">
+                  <img src="assets/pumpkinspice.png" alt="pumpkin spice rolls">
                   <h4>Pumpkin Spice</h4>
+                  <p>$5.00</p>
+               </div>
+               <div class="col">
+                  <img src="assets/originalglutenfree.png" alt="gluten-free original rolls">
+                  <h4>Original (Gluten Free)</h4>
                   <p>$5.00</p>
                </div>
             </div>
@@ -130,10 +137,10 @@
         <div class="footer-content">
             <p>Follow us</p>
             <ul class="socials">
-                <li><img src="images/twitter.png" alt="twitter icon"/></li>
-                <li><img src="images/instagram.png" alt="instagram icon"/></li>
-                <li><img src="images/facebook.png" alt="facebook icon"/></li>
-                <li><img src="images/youtube.jpg" alt="youtube icon"/></li>
+                <li><img src="assets/twitter.png" alt="twitter icon"/></li>
+                <li><img src="assets/instagram.png" alt="instagram icon"/></li>
+                <li><img src="assets/facebook.png" alt="facebook icon"/></li>
+                <li><img src="assets/youtube.jpg" alt="youtube icon"/></li>
             </ul>
             <p>Back to top</p>
         </div>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+<body onload="onLoad()">
     <!-- headline-->
     <div class="headline" id="theHeadline">
         <h1>BUN BUN BAKERY</h1>
@@ -27,30 +27,40 @@
       <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
         <div class="topnav-right">
-            <a href="#cart" class="active">My Cart</a>
+            <a href="cart.html" id="cart-display">My Cart (<span id="cart-count"></span>)</a>
         </div>
     </div>
 
     <div class="shopping-cart">
         <!-- cart selection -->
         <div class="cart-page">
-             <table id="view-cart">
-                <h2>Shopping Cart</h2>
-                <p id="empty-cart">Your cart is currently empty.  <a href="menu.html">Continue shopping</a></p>
+            <h2>Shopping Cart</h2>
+            <p id="empty-cart">Your cart is currently empty.  <a href="menu.html">Continue shopping</a></p>
+            <table id="view-cart">
                 <tr id="table-header">
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Price</th>
+                    <th></th>
                 </tr>
+                <!--<tr>
+                    <td><input type="button" class="remove-item" value="X"/></td>
+                    <a href class=class "remove">Remove</a>
+                </tr>-->
             </table>
+        </div>
+
+        <div class="cart-actions">
+            <a href="menu.html" class="keep-shopping">Continue shopping</a>
         </div>
 
         <!-- total cost information -->
         <div class="total-cost">
             <h3>Order Summary</h3>
-            <p>Subtotal: <span id="subtotal">0.00</span></p>
-            <p>Shipping: <span id="shipping">0.00</span></p>
-            <div class=checkout>
+            <p>Subtotal: <span id="subtotal"></span></p>
+            <p>Shipping: <span id="shipping">1.05</span></p>
+            <p>Grand Total: <span id="grand-total"></span></p>
+            <div class="checkout">
                 <button>Checkout</button>
             </div>
 
@@ -72,10 +82,10 @@
         <div class="footer-content">
             <p>Follow us</p>
             <ul class="socials">
-                <li><img src="images/twitter.png" alt="twitter icon"/></li>
-                <li><img src="images/instagram.png" alt="instagram icon"/></li>
-                <li><img src="images/facebook.png" alt="facebook icon"/></li>
-                <li><img src="images/youtube.jpg" alt="youtube icon"/></li>
+                <li><img src="assets/twitter.png" alt="twitter icon"/></li>
+                <li><img src="assets/instagram.png" alt="instagram icon"/></li>
+                <li><img src="assets/facebook.png" alt="facebook icon"/></li>
+                <li><img src="assets/youtube.jpg" alt="youtube icon"/></li>
             </ul>
             <p>Back to top</p>
         </div>

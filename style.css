@@ -62,9 +62,14 @@ main h2 {
   text-align: center;
 }
 
+.menucontainer h2:hover {
+  color: #E3C7FF;
+}
+
 .menucontainer h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
+  color: black;
   text-align: center;
 }
 
@@ -259,22 +264,67 @@ main h2 {
 .row {
   display: grid;
   grid-template-columns: 200px 200px 200px;
-  grid-gap: 150px;
   margin-top: 44px;
   margin-bottom: 100px;
   grid-auto-rows: 500px;
-  justify-items: center;
-  justify-content: center;
   align-items: stretch;
   align-content: center;
   grid-auto-rows: 500px;
   grid-auto-flow: column;
 }
 
+.recommended {
+  overflow: hidden;
+}
+
 .recommended h3 {
+  width: 90%;
+  margin: 10px auto;
   padding-left: 80px;
   font-weight: 600;
 }
+
+.recommended span {
+  position: absolute;
+  font-size: 60px;
+  font-weight: bold;
+  color: purple;
+  cursor: pointer;
+  left: 8%;
+  z-index: 1;
+}
+
+.recommended span:nth-of-type(2) {
+  left: 94%;
+  text-align: right;
+}
+
+.row {
+  width: 95%;
+  height: 500px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: left;
+  overflow-x: auto;
+}
+
+.row::-webkit-scollbar{
+  visibility: hidden;
+}
+
+.row .col {
+  min-width: 330px;
+  height: 200px;
+  position: relative;
+  left: 0;
+  text-align: center;
+  padding-top: 60px;
+  font-size: 100px;
+  font-weight: bold;
+  margin: 10px 20px;
+  transition: 0.5s;
+}
+
 
 .row img {
   width: 200px;
@@ -285,6 +335,7 @@ main h2 {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   margin-top: 10px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -292,6 +343,7 @@ main h2 {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   margin-top: 5px;
+  font-size: 14px;
 }
 
 /* cart items */
@@ -315,7 +367,7 @@ th {
   color: #ffffff;
   background: #230045;
   font-weight: normal;
-  width: 500px;
+  width: 100%;
   text-align: center;
 }
 

@@ -21,7 +21,7 @@ var vanilla = document.getElementById("vanilla-milk");
 var chocolate = document.getElementById("double-chocolate");
 
 /* variable for updating main product img */
-var ogmainImg = "images/walnutproduct.png";
+var ogmainImg = "assets/walnutproduct.png";
 
 /* functions for every glazing selection */
 function selectNone() {
@@ -43,7 +43,7 @@ function selectVanilla() {
         notSelected[i].style.border = "2px #000000 solid";
         notSelected[i].style.color = "#000000";
     }
-    document.getElementById("mainImg").src="images/walnutproduct_vanilla.jpg"
+    document.getElementById("mainImg").src="assets/walnutproduct_vanilla.jpg"
 }
 
 function selectSugar() {
@@ -54,7 +54,7 @@ function selectSugar() {
         notSelected[i].style.border = "2px #000000 solid";
         notSelected[i].style.color = "#000000";
     }
-    document.getElementById("mainImg").src="images/walnutproduct_sugar.jpg"
+    document.getElementById("mainImg").src="assets/walnutproduct_sugar.jpg"
 }
 
 function selectChocolate() {
@@ -65,7 +65,7 @@ function selectChocolate() {
         notSelected[i].style.border = "2px #000000 solid";
         notSelected[i].style.color = "#000000";
     }
-    document.getElementById("mainImg").src="images/walnutproduct_chocolate.jpg"
+    document.getElementById("mainImg").src="assets/walnutproduct_chocolate.jpg"
 }
 if (noGlazing) {
     noGlazing.addEventListener('click', selectNone);
@@ -164,6 +164,7 @@ function initializeItem(glaze, quant) {
 /* checking items to add to cart */
 function checkItemInCart(cart, item) {
     if (cart.length == 0) {
+
         return "add";
     } else {
         var l = cart.length;
@@ -177,13 +178,28 @@ function checkItemInCart(cart, item) {
     return "add";
 }
 
+function totalPrice() {
+    var crt = JSON.parse(sessionStorage.getItem("cart"));
+    var subtotal = 0;
+    var grandTotal = 0;
+    var shipping = document.getElementById("shipping").innerText;
+    for (var i=0; i<crt.length; i++) {
+        subtotal = subtotal + crt[i].price * crt[i].amount
+        grandTotal = Number(subtotal) + Number(shipping)
+    }
+    document.getElementById("subtotal").innerText = subtotal + ".00"
+    document.getElementById("grand-total").innerText = grandTotal
+}
+
 /* add to cart function */
 function addToCart(cart, glaze, quant) {
-    var crt = JSON.parse(sessionStorage.getItem("cart"))
+    var crt = JSON.parse(sessionStorage.getItem("cart"));
     var item = initializeItem(glaze, quant);
     var check = checkItemInCart(crt, item);
     if (check == "add") {
         crt.push(item);
+        document.getElementById("cart-count").innerText = crt.length;
+      
     } else {
         var i = checkItemInCart(crt, item);
         var name1 = crt[i].name;
@@ -204,14 +220,28 @@ function confirm() {
     if (text.style.display === "none") text.style.display = "block";
 }
 
+/* removing items from cart */
+function removeFromCart(name, glaze) {
+    var crt = JSON.parse(sessionStorage.getItem("cart"));
+    var y;
+    /* matches name and glaze and removes entire item */
+    for (var z=0; z < crt.length; z++) {
+        y = crt[z];
+        if (y.name == name && y.glaze == glaze) {
+            crt.splice(z, 1);
+            break;
+        }
+    }
+    /* removes item from storage and reloads page to show update */
+    sessionStorage.removeItem("cart");
+    sessionStorage.setItem("cart", JSON.stringify(crt));
+    location.reload();
+}
+
 var ct = document.getElementById("submit");
 if (ct) document.getElementById("submit").onclick = function() {addToCart(cart, glaze, quant);confirm()};
 
 
-/* ---------------------------------------------------------------- */
-
-
-/* CART PAGE */
 /* init new cart */
 var emptyCart = document.getElementById("empty-cart");
 var newCart = JSON.parse(sessionStorage.getItem("cart"));
@@ -225,20 +255,64 @@ if (emptyCart) {
 /* view cart items */
 var viewCart = document.getElementById("view-cart");
 if (viewCart) {
-    if (i != 0) {
-        for (var i = 0; i < newCart.length; i++) {
-            if (newCart[i].amount != 0) {
+    if (x != 0) {
+        for (var x = 0; x < newCart.length; x++) {
+            if (newCart[x].amount != 0) {
                 var row = viewCart.insertRow(-1);
 
                 var prodCell = row.insertCell(0);
                 var quanCell = row.insertCell(1);
                 var pricCell = row.insertCell(2);
+                var remCell = row.insertCell(3);
 
-                prodCell.innerHTML = '<img src="images/walnutproduct_sugar.jpg">'+ newCart[i].name + ", " + newCart[i].glaze
-                quanCell.innerHTML = newCart[i].amount.toString()
-                pricCell.innerHTML = "$" + (newCart[i].amount * newCart[i].price).toString() + ".00"
+                /* remove button functionality */
+                var inputElement = document.createElement('BUTTON');
+                inputElement.innerHTML = "Remove";
+                inputElement.addEventListener('click', function(){
+                    var unformat = this.parentNode.parentNode.firstChild.getElementsByTagName("p")[0].innerHTML;
+                    var form = unformat.split(", ");
+                    removeFromCart(form[0], form[1]);
+                });
+                remCell.appendChild(inputElement);
+                
+                /* item information */
+                prodCell.innerHTML = '<img src="assets/walnutproduct_sugar.jpg">'+ "<p>"+newCart[x].name + ", " + newCart[x].glaze+"</p>"
+                quanCell.innerHTML = newCart[x].amount.toString()
+                pricCell.innerHTML = "$" + (newCart[x].amount * newCart[x].price).toString() + ".00"
+
+               // document.getElementById("subtotal").innerText 
             }
         }
     }
+}
 
+//document.getElementById("subtotal").innerText = 
+//var checkOut = document.getElementById("checkout")
+
+
+
+
+/* recommended items carousel */
+var span = document.getElementsByTagName("span");
+var div = document.getElementsByTagName("rol");
+
+/* left arrow */
+var l = 0;
+span[1].onclick = ()=>{
+    l++;
+    for(var i of div) {
+        if (l==0) {i.syle.left="0px";}
+        if (l==1) {i.syle.left="-740px";}
+        if (l==2) {i.syle.left="-1480px";}
+        if (l>2) {l=2;}
+    }
+}
+
+/* right arrow */
+
+/* number of items in cart consistent across pages */
+function onLoad() {
+    var crt = JSON.parse(sessionStorage.getItem("cart"));
+    document.getElementById("cart-count").innerText = crt.length;
+    totalPrice()
 }

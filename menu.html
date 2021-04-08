@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+<body onload="onLoad()">
    <!-- headline information --> 
    <div class="headline" id="theHeadline">
         <h1>BUN BUN BAKERY</h1>
@@ -27,7 +27,7 @@
       <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
         <div class="topnav-right">
-            <a href="cart.html">My Cart</a>
+            <a href="cart.html" id="cart-display">My Cart (<span id="cart-count"></span>)</a>
         </div>
     </div>
 
@@ -37,42 +37,50 @@
         <!-- Menu selection -->
         <div class="menucontainer">
             <div class="original">
-                <img src="images/original.png" alt="original rolls"/>
-                <h2>Original</h2>
-                <h3>$5</h3>
+                <a href="product.html">
+                    <img src="assets/original.png" alt="original rolls"/>
+                    <h2>Original</h2>
+                    <h3>$5</h3>
+                </a>
             </div>
 
             <div class="og-glutenfree">
-                <img src="images/originalglutenfree.png" alt="original gluten-free rolls"/>
-                <h2>Original (Gluten-Free)</h2>
-                <h3>$5</h3>
+                <a href="product.html">
+                    <img src="assets/originalglutenfree.png" alt="original gluten-free rolls"/>
+                    <h2>Original (Gluten-Free)</h2>
+                    <h3>$5</h3>
+                </a>
             </div>
 
             <div class="blackberry">
-                <img src="images/blackberry.png" alt="blackberry rolls"/>
-                <h2>Blackberry</h2>
-                <h3>$5</h3>
+                <a href="product.html">
+                    <img src="assets/blackberry.png" alt="blackberry rolls"/>
+                    <h2>Blackberry</h2>
+                    <h3>$5</h3>
+                </a>
             </div>
 
             <div class="pumpkinspice">
-                <img src="images/pumpkinspice.png" alt="pumpkin spice rolls"/>
-                <h2>Pumpkin Spice</h2>
-                <h3>$5</h3>
+                <a href="product.html">
+                    <img src="assets/pumpkinspice.png" alt="pumpkin spice rolls"/>
+                    <h2>Pumpkin Spice</h2>
+                    <h3>$5</h3>
+                </a>
             </div>
 
             <div class="walnut">
                 <a href="product.html">
-                    <img src="images/walnut.png" alt="walnut rolls" style="color:black">
+                    <img src="assets/walnut.png" alt="walnut rolls">
                     <h2>Walnut</h2>
+                    <h3>$5</h3>
                 </a>
-                <h3>$5</h3>
             </div>
 
             <div class="caramelpecan">
-              
-                    <img src="images/caramelpecan.png" alt="caramel pecan rolls"/>
+                <a href="product.html">
+                    <img src="assets/caramelpecan.png" alt="caramel pecan rolls"/>
                     <h2>Caramel Pecan</h2>
-       
+                </a>
                 <h3>$5</h3>
             </div>
         </div>
@@ -93,10 +101,10 @@
         <div class="footer-content">
             <p>Follow us</p>
             <ul class="socials">
-                <li><img src="images/twitter.png" alt="twitter icon"/></li>
-                <li><img src="images/instagram.png" alt="instagram icon"/></li>
-                <li><img src="images/facebook.png" alt="facebook icon"/></li>
-                <li><img src="images/youtube.jpg" alt="youtube icon"/></li>
+                <li><img src="assets/twitter.png" alt="twitter icon"/></li>
+                <li><img src="assets/instagram.png" alt="instagram icon"/></li>
+                <li><img src="assets/facebook.png" alt="facebook icon"/></li>
+                <li><img src="assets/youtube.jpg" alt="youtube icon"/></li>
             </ul>
             <p>Back to top</p>
         </div>
