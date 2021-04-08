@@ -1,2 +1,2 @@
-# homework6A
-pui s20, hw6A
+# homework_6B
+pui s20, hw6B
