@@ -12,7 +12,7 @@ Cannot test: CSS validator loads with error (-2 pts)
 Cannot test: JS page description (-2 pts) 
 Cannot test: Cart indicator (-1.25 pts) 
 Cannot test: Interactions load with an error
-  Not sure if one of these comments was referring to the broken image link which I fixed in my 6B submission. However, the 6A shopping cart was functional in that when you add an item to the cart, the item is stored and can be seen when you click on my cart. I added a live item count in the 6B submission to make it more clear.
+  Not sure if one of these comments was referring to the broken image link which I fixed in my 6B submission. However, the 6A shopping cart was functional in that when you add an item to the cart, the item is stored and can be seen when you click on my cart. I added a live item count (counts number of roll types) in the 6B submission to make it more clear.
 
 
 ** OTHER NOTES **
