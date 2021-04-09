@@ -178,6 +178,7 @@ function checkItemInCart(cart, item) {
     return "add";
 }
 
+/* calculating subtotal and grand total */
 function totalPrice() {
     var crt = JSON.parse(sessionStorage.getItem("cart"));
     var subtotal = 0;
@@ -232,6 +233,7 @@ function removeFromCart(name, glaze) {
             break;
         }
     }
+
     /* removes item from storage and reloads page to show update */
     sessionStorage.removeItem("cart");
     sessionStorage.setItem("cart", JSON.stringify(crt));
@@ -279,36 +281,10 @@ if (viewCart) {
                 prodCell.innerHTML = '<img src="assets/walnutproduct_sugar.jpg">'+ "<p>"+newCart[x].name + ", " + newCart[x].glaze+"</p>"
                 quanCell.innerHTML = newCart[x].amount.toString()
                 pricCell.innerHTML = "$" + (newCart[x].amount * newCart[x].price).toString() + ".00"
-
-               // document.getElementById("subtotal").innerText 
             }
         }
     }
 }
-
-//document.getElementById("subtotal").innerText = 
-//var checkOut = document.getElementById("checkout")
-
-
-
-
-/* recommended items carousel */
-var span = document.getElementsByTagName("span");
-var div = document.getElementsByTagName("rol");
-
-/* left arrow */
-var l = 0;
-span[1].onclick = ()=>{
-    l++;
-    for(var i of div) {
-        if (l==0) {i.syle.left="0px";}
-        if (l==1) {i.syle.left="-740px";}
-        if (l==2) {i.syle.left="-1480px";}
-        if (l>2) {l=2;}
-    }
-}
-
-/* right arrow */
 
 /* number of items in cart consistent across pages */
 function onLoad() {
